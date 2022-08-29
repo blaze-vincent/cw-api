@@ -28,8 +28,6 @@ async function getConnection(){
 
 export default async function createApiRequest(route){
   return await getConnection().then(connection => {
-    console.log(connection.headers)
-
     return fetch(connection.url + route, {
       headers: connection.headers,
     }).then(async res => {
