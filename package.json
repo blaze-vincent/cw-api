@@ -1,0 +1,23 @@
+{
+  "name": "cw-api",
+  "version": "1.0.0",
+  "description": "ConnectWise Manage API interactions for automation of certain tedious tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-fetch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blaze-vincent/cw-api.git"
+  },
+  "author": "Blaze Vincent",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blaze-vincent/cw-api/issues"
+  },
+  "homepage": "https://github.com/blaze-vincent/cw-api#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  },
+  "type":"module"
+}
