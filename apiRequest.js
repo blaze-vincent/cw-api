@@ -27,19 +27,20 @@ async function getConnection(){
 }
 
 export default async function createApiRequest(route){
-  return await getConnection().then(connection => {
-    return fetch(connection.url + route, {
-      headers: connection.headers,
-    }).then(async res => {
-      if(res.ok){
-        return await res.json();
+  const connection = await getConnection();
+  const res = await fetch(connection.url + route, {
+    headers: connection.headers,
+  });
+  if (res.ok) {
+    return await res.json();
+  }
+  else {
+    const { status, statusText } = res;
+    return {
+      error: {
+        status,
+        statusText
       }
-      else {
-        const {status, statusText} = res;
-        return {error: {
-          status,
-          statusText
-        }}}
-    })
-  })
+    };
+  }
 }
